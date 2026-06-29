@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Servus Deutsch Wien — Deutschkurse A1–C1 | ÖSD-, ÖIF- &amp; Goethe-Vorbereitung</title>
+  <meta name="description" id="metaDesc" content="Online-Deutschkurse für Erwachsene in Österreich: Niveaus A1–C1, Vorbereitung auf ÖSD, ÖIF und Goethe-Zertifikat, kleine Gruppen bis 6 Personen. Erste Stunde gratis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="icon" type="image/png" href="favicon.png?v=29">
+</head>
+<body data-title-key="meta.title">
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Servus Deutsch — Startseite">
+        <span class="logo-mark" aria-hidden="true">
+          <img src="logo.png?v=29" alt="" width="34" height="34">
+        </span>
+        <span class="logo-text">Servus <em>Deutsch</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Hauptnavigation">
+        <a href="#levels" data-i18n="nav.levels">Niveaus</a>
+        <a href="#why" data-i18n="nav.why">Warum wir</a>
+        <a href="#teachers" data-i18n="nav.teachers">Lehrkräfte</a>
+        <a href="#pricing" data-i18n="nav.pricing">Preise</a>
+        <a href="#faq">FAQ</a>
+        <a href="platform.html" class="nav-platform" data-i18n="nav.platform">Plattform</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Sprache / Language / Мова">
+          <button type="button" class="lang-btn" data-lang="de">DE</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="uk">UA</button>
+          <button type="button" class="lang-btn" data-lang="ru">RU</button>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.cta">Gratis Probestunde</a>
+        <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-photo" style="background-image:url('hero-vienna.webp?v=29')"></div>
+      <span class="shape shape-circle"></span>
+      <span class="shape shape-triangle"></span>
+      <span class="shape shape-square"></span>
+      <span class="shape shape-circle-fill"></span>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge reveal">
+          <span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span id="heroBadgeText" data-i18n="hero.badge">Anmeldung offen — Kursstart am 1. Juli</span>
+        </div>
+        <h1 class="hero-title reveal">
+          <span data-i18n="hero.title1">Deutsch, das wirkt —</span>
+          <span class="hero-line2"><span data-i18n="hero.for">für</span>&nbsp;<span class="rotator"><span class="rotator-word" id="rotatorWord">deine Karriere</span></span></span>
+        </h1>
+        <p class="hero-sub reveal" data-i18n="hero.sub">
+          Online-Sprachschule für Erwachsene in Österreich. Kleine Gruppen bis 6 Personen,
+          zertifizierte Lehrkräfte und ein Programm, nach dem Sie sprechen — nicht nur „lernen“.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#contact" class="btn btn-primary">
+            <span data-i18n="hero.cta1">Gratis Probestunde sichern</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#levels" class="btn btn-ghost" data-i18n="hero.cta2">Programm ansehen</a>
+        </div>
+        <dl class="hero-stats reveal">
+          <div class="stat">
+            <dt class="stat-num"><span data-count="7">0</span></dt>
+            <dd data-i18n="hero.stat1">Jahre Erfahrung</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-num"><span data-count="1200">0</span>+</dt>
+            <dd data-i18n="hero.stat2">Absolvent:innen</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-num"><span data-count="92">0</span>%</dt>
+            <dd data-i18n="hero.stat3">bestehen die ÖSD-Prüfung</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label"><span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="how.label">So funktioniert's</span></p>
+        <h2 class="section-title" data-i18n="how.title">In drei Schritten zum ersten Satz</h2>
+        <p class="section-sub" data-i18n="how.sub">Kein Papierkram, kein Risiko. Sie starten mit einer gratis Probestunde.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3 data-i18n="how.s1.t">Probestunde anfragen</h3>
+          <p data-i18n="how.s1.p">Formular ausfüllen — wir melden uns innerhalb einer Stunde per Telegram.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3 data-i18n="how.s2.t">Niveau &amp; Gruppe finden</h3>
+          <p data-i18n="how.s2.p">Kurzer Einstufungstest, dann wählen wir gemeinsam Format und Zeit.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3 data-i18n="how.s3.t">Sprechen ab der ersten Einheit</h3>
+          <p data-i18n="how.s3.p">Sie lernen in einer kleinen Gruppe — und reden vom ersten Tag an.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEVELS ===== -->
+  <section class="section" id="levels">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label"><span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="levels.label">Programm</span></p>
+        <h2 class="section-title" data-i18n="levels.title">Von „Hallo“ bis zum freien Gespräch</h2>
+        <p class="section-sub" data-i18n="levels.sub">Fünf Niveaus nach dem Europäischen Referenzrahmen (GER). Klicken Sie auf ein Niveau für Details.</p>
+      </div>
+      <div class="levels reveal" id="levelsList">
+        <div class="level">
+          <button class="level-head" aria-expanded="false">
+            <span class="level-num">A1</span>
+            <span class="level-name" data-i18n="lv.a1.name">Start</span>
+            <span class="level-meta" data-i18n="lv.a1.meta">4 Monate · 32 Einheiten</span>
+            <span class="level-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="level-body">
+            <p data-i18n="lv.a1.desc">Alphabet, Aussprache, Basisgrammatik. Sie können sich vorstellen, im Café bestellen, nach dem Weg fragen und in einfachen Sätzen über sich erzählen.</p>
+            <ul class="level-skills"><li data-i18n="lv.a1.s1">≈ 800 Wörter</li><li data-i18n="lv.a1.s2">Präsens &amp; Artikel</li><li data-i18n="lv.a1.s3">Alltagsdialoge</li></ul>
+          </div>
+        </div>
+        <div class="level">
+          <button class="level-head" aria-expanded="false">
+            <span class="level-num">A2</span>
+            <span class="level-name" data-i18n="lv.a2.name">Aufbau</span>
+            <span class="level-meta" data-i18n="lv.a2.meta">4 Monate · 32 Einheiten</span>
+            <span class="level-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="level-body">
+            <p data-i18n="lv.a2.desc">Vergangenheit, Zukunftspläne, Korrespondenz. Sie fühlen sich auf Reisen sicher, verstehen Durchsagen und führen einfache Telefongespräche.</p>
+            <ul class="level-skills"><li data-i18n="lv.a2.s1">≈ 1500 Wörter</li><li data-i18n="lv.a2.s2">Perfekt &amp; Dativ</li><li data-i18n="lv.a2.s3">Small Talk</li></ul>
+          </div>
+        </div>
+        <div class="level">
+          <button class="level-head" aria-expanded="false">
+            <span class="level-num">B1</span>
+            <span class="level-name" data-i18n="lv.b1.name">Selbstständig</span>
+            <span class="level-meta" data-i18n="lv.b1.meta">5 Monate · 40 Einheiten</span>
+            <span class="level-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="level-body">
+            <p data-i18n="lv.b1.desc">Das Niveau für Job, Aufenthaltstitel und Staatsbürgerschaft in Österreich. Sie argumentieren, schreiben offizielle Briefe und verstehen Serien ohne Untertitel. Vorbereitung auf ÖSD/ÖIF B1.</p>
+            <ul class="level-skills"><li data-i18n="lv.b1.s1">≈ 2500 Wörter</li><li data-i18n="lv.b1.s2">Konjunktiv II</li><li data-i18n="lv.b1.s3">ÖSD / ÖIF B1</li></ul>
+          </div>
+        </div>
+        <div class="level">
+          <button class="level-head" aria-expanded="false">
+            <span class="level-num">B2</span>
+            <span class="level-name" data-i18n="lv.b2.name">Beruf</span>
+            <span class="level-meta" data-i18n="lv.b2.meta">5 Monate · 40 Einheiten</span>
+            <span class="level-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="level-body">
+            <p data-i18n="lv.b2.desc">Freie Diskussion über berufliche Themen, Präsentationen, Bewerbungsgespräche auf Deutsch. Das Niveau, das Arbeitgeber und Universitäten verlangen. Vorbereitung auf ÖSD B2.</p>
+            <ul class="level-skills"><li data-i18n="lv.b2.s1">≈ 4000 Wörter</li><li data-i18n="lv.b2.s2">Passiv &amp; Nominalstil</li><li data-i18n="lv.b2.s3">ÖSD B2 / TestDaF</li></ul>
+          </div>
+        </div>
+        <div class="level">
+          <button class="level-head" aria-expanded="false">
+            <span class="level-num">C1</span>
+            <span class="level-name" data-i18n="lv.c1.name">Meisterschaft</span>
+            <span class="level-meta" data-i18n="lv.c1.meta">6 Monate · 48 Einheiten</span>
+            <span class="level-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="level-body">
+            <p data-i18n="lv.c1.desc">Stilnuancen, Idiome, akademisches Schreiben. Sie sprechen spontan und präzise — auf dem Niveau gebildeter Muttersprachler:innen. Für Medizin, Recht und das Masterstudium.</p>
+            <ul class="level-skills"><li data-i18n="lv.c1.s1">6000+ Wörter</li><li data-i18n="lv.c1.s2">Stilistik</li><li data-i18n="lv.c1.s3">ÖSD / Goethe C1</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY ===== -->
+  <section class="section section-alt" id="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label"><span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="why.label">Warum wir</span></p>
+        <h2 class="section-title" data-i18n="why.title">Ein System — nicht nur Unterricht</h2>
+      </div>
+      <div class="bento">
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <h3 data-i18n="why.c1.t">Gruppen bis 6 Personen</h3>
+          <p data-i18n="why.c1.p">Jede:r spricht in jeder Einheit mindestens 20 Minuten. Keine „Vorlesungen für dreißig Leute“.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+          </span>
+          <h3 data-i18n="why.c2.t">Wöchentliche Sprachclubs</h3>
+          <p data-i18n="why.c2.p">Kostenlose Sprachclub-Treffen mit Muttersprachler:innen — für alle Studierenden ab Niveau A2.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </span>
+          <h3 data-i18n="why.c3.t">ÖSD-, ÖIF- &amp; Goethe-Vorbereitung</h3>
+          <p data-i18n="why.c3.p">Eigene Module mit Prüfungsformat, Probetests und Analyse typischer Fehler — für alle anerkannten Prüfungen in Österreich.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+          </span>
+          <h3 data-i18n="why.c4.t">Flexible Zeiten</h3>
+          <p data-i18n="why.c4.p">Morgen-, Abend- und Samstagsgruppen. Einheit verpasst? Sie erhalten Aufzeichnung und Skript.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>
+          </span>
+          <h3 data-i18n="why.c5.t">Eigene Lernplattform</h3>
+          <p data-i18n="why.c5.p">Interaktive Hausaufgaben mit Auto-Korrektur, vertontes Wörterbuch und Fortschritts-Tracker.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22H9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2Z"/><path d="m9 10 2 2 4-4"/></svg>
+          </span>
+          <h3 data-i18n="why.c6.t">Niveau-Zertifikat</h3>
+          <p data-i18n="why.c6.p">Nach jedem Niveau: interne Prüfung und Zertifikat, das Partnerunternehmen anerkennen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEACHERS ===== -->
+  <section class="section" id="teachers">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label"><span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="team.label">Team</span></p>
+        <h2 class="section-title" data-i18n="team.title">Lehrkräfte, die die Sprache leben</h2>
+      </div>
+      <div class="teachers teachers-2">
+        <article class="teacher reveal">
+          <span class="avatar avatar-circle" aria-hidden="true">AB</span>
+          <h3>Anna Berger</h3>
+          <p class="teacher-role" data-i18n="team.t1.role">Niveaus A0–C1 · Grammatik &amp; Übersetzung</p>
+          <p data-i18n="team.t1.bio">5 Jahre Unterrichtserfahrung, Bachelor der Universität Wien und Übersetzerdiplom. Erklärt Grammatik so, dass man sie endlich versteht.</p>
+        </article>
+        <article class="teacher reveal">
+          <span class="avatar avatar-triangle" aria-hidden="true">MH</span>
+          <h3>Markus Hofer</h3>
+          <p class="teacher-role" data-i18n="team.t2.role">Niveaus A1–B2 · Sprechen &amp; Dialekt</p>
+          <p data-i18n="team.t2.bio">4 Jahre Unterrichtserfahrung, Bachelor der Universität Wien. Nimmt die Angst vor dem Sprechen und bringt dir bei, den österreichischen Dialekt endlich zu verstehen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label"><span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="price.label">Preise</span></p>
+        <h2 class="section-title" data-i18n="price.title">Ein Format für Ihren Rhythmus</h2>
+        <p class="section-sub" data-i18n="price.sub">Monatliche Zahlung, jederzeit kündbar. Die erste Einheit ist in jedem Format gratis. Alle Preise inkl. gesetzlicher USt.</p>
+      </div>
+      <div class="pricing">
+        <article class="price-card reveal">
+          <h3 data-i18n="price.p1.name">Gruppe</h3>
+          <p class="price"><span>€ 119</span><em data-i18n="price.month">/Monat</em></p>
+          <p class="price-note" data-i18n="price.p1.note">bis 6 Personen pro Gruppe</p>
+          <ul class="price-list">
+            <li data-i18n="price.p1.f1">8 Einheiten à 80 Minuten</li>
+            <li data-i18n="price.p1.f2">Lernplattform mit Hausaufgaben</li>
+            <li data-i18n="price.p1.f3">Wöchentlicher Sprachclub</li>
+            <li data-i18n="price.p1.f4">Aufzeichnungen aller Einheiten</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost btn-block" data-i18n="price.cta">Gratis ausprobieren</a>
+        </article>
+        <article class="price-card price-featured reveal">
+          <p class="price-badge" data-i18n="price.popular">Am beliebtesten</p>
+          <h3 data-i18n="price.p2.name">Mini-Gruppe</h3>
+          <p class="price"><span>€ 179</span><em data-i18n="price.month">/Monat</em></p>
+          <p class="price-note" data-i18n="price.p2.note">2–3 Personen, schnelleres Tempo</p>
+          <ul class="price-list">
+            <li data-i18n="price.p2.f1">8 Einheiten à 80 Minuten</li>
+            <li data-i18n="price.p2.f2">Alles aus dem Tarif „Gruppe“</li>
+            <li data-i18n="price.p2.f3">Individuelles Feedback pro Woche</li>
+            <li data-i18n="price.p2.f4">Korrektur schriftlicher Arbeiten</li>
+            <li data-i18n="price.p2.f5">Bevorzugte Terminwahl</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block" data-i18n="price.cta">Gratis ausprobieren</a>
+        </article>
+        <article class="price-card reveal">
+          <h3 data-i18n="price.p3.name">Einzelunterricht</h3>
+          <p class="price"><span>€ 219</span><em data-i18n="price.month">/Monat</em></p>
+          <p class="price-note" data-i18n="price.p3.note">persönliches Programm 1:1</p>
+          <ul class="price-list">
+            <li data-i18n="price.p3.f1">8 Einheiten à 60 Minuten</li>
+            <li data-i18n="price.p3.f2">Programm nach Ihrem Ziel</li>
+            <li data-i18n="price.p3.f3">Flexibles Verschieben von Einheiten</li>
+            <li data-i18n="price.p3.f4">Chat-Support der Lehrkraft</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost btn-block" data-i18n="price.cta">Gratis ausprobieren</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-label"><span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="rev.label">Stimmen</span></p>
+        <h2 class="section-title" data-i18n="rev.title">Es funktioniert. Sagen unsere Studierenden</h2>
+      </div>
+      <div class="reviews">
+        <figure class="review reveal">
+          <blockquote data-i18n="rev.r1.q">„In 9 Monaten von null auf B1 — die ÖSD-Prüfung habe ich beim ersten Versuch mit 87 Punkten bestanden. Jetzt arbeite ich als Krankenpflegerin in Wien.“</blockquote>
+          <figcaption><strong>Iryna P.</strong><span data-i18n="rev.r1.s">A0 → B1 · ÖSD-Zertifikat</span></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <blockquote data-i18n="rev.r2.q">„Das Beste sind die Sprachclubs mit Lukas. Nach einem halben Jahr hatte ich keine Angst mehr, österreichische Kunden anzurufen.“</blockquote>
+          <figcaption><strong>Andrij S.</strong><span data-i18n="rev.r2.s">B1 → B2 · IT-Manager, Graz</span></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <blockquote data-i18n="rev.r3.q">„Ich habe davor drei Schulen probiert. Hier gibt es zum ersten Mal ein System: Ich sehe meinen Fortschritt jede Woche auf der Plattform.“</blockquote>
+          <figcaption><strong>Olena T.</strong><span data-i18n="rev.r3.s">A2 → B1 · Umzug nach Wien</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-alt" id="faq">
+    <div class="container container-narrow">
+      <div class="section-head reveal">
+        <p class="section-label"><span class="tricolor" aria-hidden="true"><i></i><i></i><i></i></span>FAQ</p>
+        <h2 class="section-title" data-i18n="faq.title">Häufige Fragen</h2>
+      </div>
+      <div class="faq reveal" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q1">Ich habe noch nie Deutsch gelernt. Wo fange ich an?</span><span class="level-chevron" aria-hidden="true"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a1">Mit der gratis Probestunde: Wir klären Ihr Ziel, machen einen Einstufungstest (falls Vorkenntnisse da sind) und finden die nächste A1-Gruppe. Vorbereitung ist nicht nötig.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q2">Wie lange dauert es bis Niveau B1?</span><span class="level-chevron" aria-hidden="true"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a2">Im Standardtempo etwa 13 Monate (A1 + A2 + B1). In der Mini-Gruppe oder im Einzelunterricht ab 9–10 Monaten — bei regelmäßigen Hausaufgaben.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q3">Was passiert, wenn ich eine Einheit verpasse?</span><span class="level-chevron" aria-hidden="true"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a3">Alle Einheiten werden aufgezeichnet. Sie erhalten Aufzeichnung, Skript und Hausaufgabe auf der Plattform; in der nächsten Einheit fasst die Lehrkraft das Verpasste kurz zusammen.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q4">Helfen Sie bei der Anmeldung zur ÖSD- oder Goethe-Prüfung?</span><span class="level-chevron" aria-hidden="true"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a4">Ja. Wir empfehlen Termine und Prüfungszentren in Österreich, helfen bei der Anmeldung und führen zwei Probeprüfungen im realen Format durch — bewertet nach den offiziellen Kriterien.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span data-i18n="faq.q5">Kann ich den Kurs pausieren?</span><span class="level-chevron" aria-hidden="true"></span></button>
+          <div class="faq-a"><p data-i18n="faq.a5">Ja, bis zu 2 Monate pro Jahr ohne Verlust bezahlter Einheiten — Urlaub, Dienstreise oder Uni-Prüfungen gefährden Ihren Fortschritt nicht.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA / CONTACT ===== -->
+  <section class="section section-cta" id="contact">
+    <div class="container container-narrow">
+      <div class="cta-box reveal">
+        <h2 class="section-title" data-i18n="cta.title">Die erste Stunde ist gratis</h2>
+        <p class="section-sub" data-i18n="cta.sub">Hinterlassen Sie Ihren Kontakt — wir melden uns innerhalb einer Stunde (werktags) per Telegram, finden Ihre Gruppe und senden den Link zur Probestunde.</p>
+        <form class="cta-form" id="ctaForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fName" data-i18n="cta.fName">Name</label>
+              <input type="text" id="fName" name="name" data-i18n-ph="cta.fNamePh" placeholder="Wie dürfen wir Sie nennen?" autocomplete="given-name" required>
+            </div>
+            <div class="form-field">
+              <label for="fContact" data-i18n="cta.fContact">Telegram oder Telefon</label>
+              <input type="text" id="fContact" name="contact" data-i18n-ph="cta.fContactPh" placeholder="@username oder +43…" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="fLevel" data-i18n="cta.fLevel">Ihr Niveau</label>
+            <select id="fLevel" name="level">
+              <option value="?" data-i18n="cta.lvUnknown">Weiß ich nicht — Einstufungstest bitte</option>
+              <option value="A0" data-i18n="cta.lvZero">Ich beginne bei null</option>
+              <option value="A1">A1</option>
+              <option value="A2">A2</option>
+              <option value="B1">B1</option>
+              <option value="B2">B2</option>
+              <option value="C1">C1</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="fConsent" required>
+            <span data-i18n="cta.consent">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Kontaktaufnahme zu.</span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block">
+            <span data-i18n="cta.submit">Gratis Probestunde anfragen</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="logo.png?v=29" alt="Servus Deutsch" width="60" height="60">
+        <span class="logo-text">Servus <em>Deutsch</em></span>
+        <p data-i18n="foot.brand">Online-Sprachschule für Deutsch.<br>Mustergasse 12/4, 1010 Wien, Österreich.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Fußzeilen-Navigation">
+        <a href="#levels" data-i18n="nav.levels">Niveaus</a>
+        <a href="#why" data-i18n="nav.why">Warum wir</a>
+        <a href="#teachers" data-i18n="nav.teachers">Lehrkräfte</a>
+        <a href="#pricing" data-i18n="nav.pricing">Preise</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <nav class="footer-nav" aria-label="Rechtliches">
+        <a href="impressum.html" data-i18n="foot.imprint">Impressum</a>
+        <a href="datenschutz.html" data-i18n="foot.privacy">Datenschutz</a>
+        <a href="agb.html" data-i18n="foot.terms">AGB</a>
+      </nav>
+      <div class="footer-contacts">
+        <a href="tel:+431234567890">+43 1 234 567 890</a>
+        <a href="https://t.me/servusdeutsch" target="_blank" rel="noopener">Telegram: @servusdeutsch</a>
+        <a href="mailto:hallo@servusdeutsch.at">hallo@servusdeutsch.at</a>
+      </div>
+    </div>
+    <p class="footer-copy" data-i18n="foot.copy">© 2026 Servus Deutsch e.U. · Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="i18n.js?v=29"></script>
+  <script src="script.js?v=29"></script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+/* ============================================================
+   Servus Deutsch — Lernplattform · Styles (erbt Tokens aus styles.css)
+   ============================================================ */
+
+.pf-wrap { min-height: 100dvh; display: flex; flex-direction: column; }
+#app { flex: 1; width: 100%; max-width: 920px; margin: 0 auto; padding: 110px 24px 96px; }
+
+.pf-h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  line-height: 1.16;
+  margin-bottom: 12px;
+}
+.pf-h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 20px;
+  margin: 44px 0 16px;
+}
+.pf-sub { color: var(--muted); font-size: 17px; max-width: 60ch; }
+
+/* ---------- Header chip ---------- */
+#userChip { display: inline-flex; align-items: center; gap: 14px; }
+.chip-role {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--amber); background: var(--amber-soft);
+  border-radius: 100px; padding: 6px 14px;
+}
+.chip-logout {
+  background: none; border: 1px solid var(--line); color: var(--muted);
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  border-radius: 100px; padding: 6px 14px; cursor: pointer; white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.chip-logout:hover { color: var(--ink); border-color: var(--amber); }
+#siteLink { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+#siteLink:hover { color: var(--amber); }
+
+/* ---------- LOGIN ---------- */
+.pf-login { max-width: 720px; margin: 0 auto; text-align: center; }
+.pf-badge {
+  display: inline-flex; align-items: center;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.05em; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 100px; padding: 8px 18px; margin-bottom: 28px;
+  background: var(--bg-1);
+}
+.pf-login .pf-sub { margin: 0 auto 36px; }
+.pf-namefield { max-width: 360px; margin: 0 auto 28px; text-align: left; }
+.pf-namefield label {
+  display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.pf-namefield input {
+  width: 100%; background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; padding: 13px 16px;
+  transition: border-color 0.2s ease;
+}
+.pf-namefield input:focus { border-color: var(--amber); outline: none; }
+
+.pf-roles { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.pf-rolecard {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 36px 24px; cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  font-family: var(--font-body);
+}
+.pf-rolecard:hover { transform: translateY(-4px); border-color: var(--amber); }
+.pf-roleicon {
+  display: inline-flex; color: var(--amber); background: var(--amber-soft);
+  border-radius: 14px; padding: 14px; margin-bottom: 6px;
+}
+.pf-roletitle { font-family: var(--font-display); font-weight: 400; font-size: 18px; color: var(--ink); }
+.pf-roledesc { color: var(--muted); font-size: 14px; }
+
+/* ---------- LOGIN: Code-Formular ---------- */
+.pf-loginicon { margin: 0 auto 22px; }
+.pf-loginlogo { display: block; margin: 0 auto 22px; }
+.pf-loginlogo img { display: block; width: 84px; height: 84px; object-fit: contain; }
+.pf-codeform { max-width: 400px; margin: 32px auto 0; text-align: left; }
+.pf-field { margin-bottom: 16px; }
+.pf-field label {
+  display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.pf-field input {
+  width: 100%; background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; padding: 13px 16px;
+  transition: border-color 0.2s ease;
+}
+.pf-field input:focus { border-color: var(--amber); outline: none; }
+.pf-field input.bad { border-color: var(--rot); }
+#pfCode, #redeemInput { letter-spacing: 0.08em; text-transform: uppercase; }
+#pfCode::placeholder, #redeemInput::placeholder { letter-spacing: 0.02em; text-transform: none; }
+.pf-codeform .btn { margin-top: 6px; }
+.pf-codeerr { color: #e0795a; font-size: 14px; min-height: 20px; margin-top: 12px; text-align: center; }
+.pf-codehint { color: var(--muted); font-size: 13px; margin-top: 14px; text-align: center; line-height: 1.5; }
+
+/* ---------- REDEEM (Dashboard) ---------- */
+.pf-redeem { margin-bottom: 36px; }
+.pf-redeem-toggle {
+  background: none; border: 1px dashed var(--line); color: var(--muted);
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  border-radius: 100px; padding: 9px 18px; cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.pf-redeem-toggle:hover { color: var(--amber); border-color: var(--amber); }
+.pf-redeem-form { display: flex; gap: 10px; margin-top: 14px; max-width: 460px; flex-wrap: wrap; }
+.pf-redeem-form input {
+  flex: 1; min-width: 200px; background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); color: var(--ink); font-family: var(--font-body);
+  font-size: 15px; padding: 11px 15px; transition: border-color 0.2s ease;
+}
+.pf-redeem-form input:focus { border-color: var(--amber); outline: none; }
+.pf-redeem-form .btn { padding: 11px 22px; }
+.pf-redeem-msg { font-size: 14px; margin-top: 10px; min-height: 18px; }
+.pf-redeem-msg.ok { color: var(--amber); }
+.pf-redeem-msg.err { color: #e0795a; }
+
+/* ---------- LOCKED LEVEL ---------- */
+.pf-level.is-locked { opacity: 0.9; }
+.pf-lockhead {
+  display: grid; grid-template-columns: 62px 1fr auto auto; align-items: center; gap: 16px;
+  padding: 20px 22px; color: var(--muted);
+}
+.pf-lockhead .pf-lvcode { color: transparent; -webkit-text-stroke: 1.4px var(--lead); }
+.pf-lockhead .pf-lvtitle { color: var(--silver); }
+.tag-locked {
+  display: inline-flex; align-items: center; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 100px; padding: 5px 11px; white-space: nowrap;
+}
+.pf-lockhint { color: var(--muted); font-size: 13px; white-space: nowrap; }
+
+/* ---------- DASHBOARD ---------- */
+.pf-dashtop { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 8px; }
+.pf-progressnote { color: var(--muted); font-size: 14px; margin-bottom: 40px; }
+
+.pf-ring { position: relative; flex: none; width: 80px; height: 80px; display: grid; place-items: center; }
+.pf-ring svg { transform: rotate(-90deg); }
+.pf-ring .ring-bg { fill: none; stroke: var(--line); stroke-width: 7; }
+.pf-ring .ring-fg {
+  fill: none; stroke: var(--amber); stroke-width: 7; stroke-linecap: round;
+  stroke-dasharray: 100; transition: stroke-dashoffset 0.8s ease;
+}
+.pf-ringnum {
+  position: absolute; font-family: var(--font-display); font-weight: 400;
+  font-size: 17px; color: var(--amber);
+}
+
+/* ---------- LEVEL ACCORDION ---------- */
+.pf-level { border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 14px; overflow: hidden; background: var(--bg-1); }
+.pf-level.is-soon { opacity: 0.72; }
+.pf-lvhead {
+  width: 100%; display: grid; grid-template-columns: 62px 1fr auto auto 20px;
+  align-items: center; gap: 16px; background: none; border: none; cursor: pointer;
+  padding: 20px 22px; text-align: left; color: var(--ink);
+  transition: background 0.2s ease;
+}
+.pf-lvhead:hover { background: rgba(232, 163, 61, 0.05); }
+.pf-lvcode {
+  font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: -0.01em;
+  color: transparent; -webkit-text-stroke: 1.3px var(--amber); white-space: nowrap;
+}
+.pf-lvhead[aria-expanded="true"] .pf-lvcode { color: var(--amber); -webkit-text-stroke: 0; }
+.pf-lvtitle { font-family: var(--font-display); font-weight: 400; font-size: 17px; }
+.pf-lvtag { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border-radius: 100px; padding: 5px 11px; white-space: nowrap; }
+.tag-active { color: var(--on-amber); background: var(--amber); }
+.tag-soon { color: var(--muted); border: 1px solid var(--line); }
+.pf-lvmeta { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.pf-lvbody { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.pf-lessons { padding: 4px 14px 14px; }
+.pf-empty { color: var(--muted); font-size: 14px; padding: 4px 8px 18px; }
+
+.pf-lesson {
+  display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--ink);
+  border: 1px solid transparent; border-radius: var(--radius-sm); padding: 14px 14px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.pf-lesson:hover { background: var(--bg-2); border-color: var(--line); transform: translateX(3px); }
+.pf-lnum {
+  flex: none; width: 34px; height: 34px; display: grid; place-items: center;
+  font-family: var(--font-display); font-size: 15px; color: var(--amber);
+  border: 1px solid var(--line); border-radius: 9px;
+}
+.pf-lbody { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.pf-ltitle { font-size: 15.5px; font-weight: 500; }
+.pf-lstatus { font-size: 12.5px; font-weight: 500; }
+.pf-lstatus.s-done { color: var(--amber); }
+.pf-lstatus.s-open { color: var(--silver); }
+.pf-lstatus.s-none { color: var(--muted); }
+.pf-lgo { color: var(--muted); font-size: 18px; transition: transform 0.2s ease, color 0.2s ease; }
+.pf-lesson:hover .pf-lgo { color: var(--amber); transform: translateX(3px); }
+
+/* ---------- LESSON VIEW ---------- */
+.pf-back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 14px; margin-bottom: 22px; transition: color 0.2s ease; }
+.pf-back:hover { color: var(--amber); }
+.pf-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.pf-goal {
+  font-size: 15.5px; color: var(--silver); background: var(--bg-1);
+  border: 1px solid var(--line); border-left: 3px solid var(--amber);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 14px 18px; margin: 18px 0 28px;
+}
+.pf-goal strong { color: var(--ink); }
+
+.pf-tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.pf-tab {
+  background: none; border: none; border-bottom: 2px solid transparent;
+  color: var(--muted); font-family: var(--font-body); font-size: 15px; font-weight: 500;
+  padding: 12px 16px; cursor: pointer; margin-bottom: -1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.pf-tab:hover { color: var(--ink); }
+.pf-tab.is-active { color: var(--amber); border-bottom-color: var(--amber); }
+.pf-tabcount {
+  display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px;
+  font-size: 11px; font-weight: 600; color: var(--on-amber); background: var(--amber);
+  border-radius: 100px; margin-left: 4px;
+}
+
+.pf-soon {
+  text-align: center; color: var(--muted); padding: 48px 24px;
+  border: 1px dashed var(--line); border-radius: var(--radius); background: var(--bg-1);
+}
+.pf-soon svg { color: var(--lead); margin: 0 auto 16px; }
+.pf-soon p { max-width: 46ch; margin: 0 auto; font-size: 15px; }
+
+/* ---------- HOMEWORK ---------- */
+.hw-teacher {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--amber-soft); border: 1px solid rgba(232,163,61,0.35);
+  border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 20px;
+}
+.hw-teacher svg { color: var(--amber); flex: none; margin-top: 2px; }
+.hw-teacher strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--amber); margin-bottom: 4px; }
+.hw-teacher-body { font-size: 15px; color: var(--ink); white-space: pre-wrap; }
+.hw-teacher-body a { color: var(--amber); text-decoration: underline; word-break: break-all; }
+
+.hw-card { background: var(--bg-1); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.hw-meta { font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.hw-progress { height: 4px; background: var(--bg-2); border-radius: 100px; overflow: hidden; margin-bottom: 24px; }
+.hw-progress span { display: block; height: 100%; background: var(--amber); transition: width 0.3s ease; }
+.hw-q { font-size: 19px; font-weight: 500; line-height: 1.4; margin-bottom: 22px; }
+
+.hw-opt {
+  display: block; width: 100%; text-align: left; background: var(--bg-2);
+  border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; padding: 14px 18px; margin-bottom: 10px; cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.hw-opt:hover { border-color: var(--amber); }
+.hw-opt.sel { border-color: var(--amber); background: var(--amber-soft); }
+.hw-opt.locked { cursor: default; pointer-events: none; }
+.hw-opt.ok { border-color: var(--amber); background: var(--amber-soft); color: var(--amber); font-weight: 600; }
+.hw-opt.bad { border-color: var(--rot); color: #e0795a; }
+
+.hw-fill { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 18px; }
+.hw-fill input {
+  flex: 1; min-width: 160px; background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); color: var(--ink); font-family: var(--font-body);
+  font-size: 17px; padding: 12px 16px; transition: border-color 0.2s ease;
+}
+.hw-fill input:focus { border-color: var(--amber); outline: none; }
+.hw-fill input.ok { border-color: var(--amber); color: var(--amber); font-weight: 600; }
+.hw-fill input.bad { border-color: var(--rot); color: #e0795a; }
+
+.hw-matchhint { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+.hw-matchrow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center; margin-bottom: 10px; }
+.hw-mterm {
+  font-family: var(--font-display); font-weight: 400; font-size: 16px;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 16px;
+}
+.hw-msel {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  color: var(--ink); font-family: var(--font-body); font-size: 15px; padding: 12px 14px; cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.hw-msel:focus { border-color: var(--amber); outline: none; }
+.hw-msel.ok { border-color: var(--amber); color: var(--amber); }
+.hw-msel.bad { border-color: var(--rot); color: #e0795a; }
+
+.hw-feedback { display: none; margin-top: 20px; padding: 14px 18px; border-radius: var(--radius-sm); font-size: 15px; }
+.hw-feedback.show { display: block; }
+.hw-feedback.good { background: var(--amber-soft); border: 1px solid rgba(232,163,61,.35); }
+.hw-feedback.bad { background: rgba(200,64,31,.1); border: 1px solid rgba(200,64,31,.3); }
+.hw-feedback strong { display: block; margin-bottom: 4px; }
+.hw-feedback.good strong { color: var(--amber); }
+.hw-feedback.bad strong { color: #e0795a; }
+.hw-sol, .hw-explain { display: block; color: var(--silver); font-size: 14px; margin-top: 4px; }
+.hw-actions { margin-top: 24px; }
+
+.hw-result { text-align: center; background: var(--bg-1); border: 1px solid var(--amber); border-radius: var(--radius); padding: 48px 28px; box-shadow: var(--shadow-hard); }
+.hw-resicon { color: var(--amber); margin-bottom: 16px; display: flex; justify-content: center; }
+.hw-result h3 { font-family: var(--font-display); font-weight: 400; font-size: 22px; margin-bottom: 8px; }
+.hw-resscore { color: var(--amber); font-size: 17px; font-weight: 600; margin-bottom: 28px; }
+.hw-resbtns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- TEACHER ---------- */
+.pf-upload { margin-bottom: 8px; }
+.pf-uploadbox {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  border: 1px dashed var(--line); border-radius: var(--radius); padding: 32px 24px;
+  color: var(--muted); cursor: pointer; background: var(--bg-1);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.pf-uploadbox:hover { border-color: var(--amber); color: var(--amber); background: rgba(232,163,61,0.05); }
+.pf-uploadnote { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+
+/* Materialliste */
+.pf-mat-list { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.pf-mat-loading { color: var(--muted); font-size: 14px; }
+.pf-mat {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px;
+}
+.pf-mat svg { color: var(--amber); flex: none; }
+.pf-mat-name { font-size: 14.5px; font-weight: 500; flex: 1; min-width: 120px; word-break: break-word; }
+.pf-mat-size { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pf-mat-actions { display: inline-flex; gap: 8px; }
+.pf-mat-dl {
+  background: var(--amber-soft); border: 1px solid rgba(232,163,61,0.35); color: var(--amber);
+  font-family: var(--font-body); font-size: 12.5px; font-weight: 500; border-radius: 100px;
+  padding: 6px 14px; cursor: pointer; transition: background 0.2s ease;
+}
+.pf-mat-dl:hover { background: rgba(232,163,61,0.22); }
+
+.pf-table { width: 100%; border-collapse: collapse; margin: 24px 0 28px; }
+.pf-table th {
+  text-align: left; font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--muted); padding: 12px 14px; border-bottom: 1px solid var(--line);
+}
+.pf-table td { padding: 14px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.pf-table .pf-num { font-variant-numeric: tabular-nums; color: var(--amber); }
+.pf-reset { margin-top: 8px; }
+
+/* ---------- TEACHER: access control + notes ---------- */
+.pf-dashbtns { display: flex; gap: 10px; flex-wrap: wrap; }
+.pf-accesshint { color: var(--muted); font-size: 14px; margin-bottom: 14px; max-width: 64ch; }
+.pf-flash { color: var(--amber); font-size: 14px; min-height: 18px; margin: 0 0 18px; }
+.pf-flash:empty { margin: 0; min-height: 0; }
+
+/* Lehrer-Lektionszeile mit Toggle */
+.pf-lesson-teach {
+  display: grid; grid-template-columns: 34px 1fr auto; gap: 16px; align-items: center;
+  padding: 12px 14px; border: 1px solid transparent; border-radius: var(--radius-sm);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.pf-lesson-teach:hover { background: var(--bg-2); border-color: var(--line); }
+.pf-llink { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--ink); min-width: 0; }
+.pf-llink:hover .pf-ltitle { color: var(--amber); }
+
+/* Closed (für Schüler nicht freigegeben) */
+.pf-lesson-closed { cursor: default; opacity: 0.62; }
+.pf-lesson-closed:hover { transform: none; background: none; border-color: transparent; }
+.pf-lesson-closed .pf-lnum { border-style: dashed; color: var(--muted); }
+.pf-lgo-lock { color: var(--lead); }
+.pf-lgo-lock svg { margin-right: 0; }
+
+/* Toggle-Switch */
+.pf-toggle { display: inline-flex; align-items: center; gap: 9px; cursor: pointer; }
+.pf-toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pf-toggle-ui {
+  width: 40px; height: 23px; flex: none; border-radius: 100px;
+  background: var(--bg-2); border: 1px solid var(--line); position: relative;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.pf-toggle-ui::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 17px; height: 17px;
+  border-radius: 50%; background: var(--muted); transition: transform 0.2s ease, background 0.2s ease;
+}
+.pf-toggle input:checked + .pf-toggle-ui { background: var(--amber-soft); border-color: var(--amber); }
+.pf-toggle input:checked + .pf-toggle-ui::after { transform: translateX(17px); background: var(--amber); }
+.pf-toggle input:focus-visible + .pf-toggle-ui { outline: 2px solid var(--amber); outline-offset: 2px; }
+.pf-toggle-text { font-size: 13px; color: var(--muted); }
+.pf-toggle input:checked ~ .pf-toggle-text { color: var(--amber); }
+
+/* Lehrer-Steuerung auf der Lektionsseite */
+.pf-teachcontrols { background: var(--bg-1); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; }
+.pf-toggle-lg { margin-bottom: 20px; }
+.pf-toggle-lg .pf-toggle-text { font-size: 15px; }
+.pf-teachcontrols textarea {
+  width: 100%; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  color: var(--ink); font-family: var(--font-body); font-size: 15px; padding: 12px 14px;
+  resize: vertical; transition: border-color 0.2s ease;
+}
+.pf-teachcontrols textarea:focus { border-color: var(--amber); outline: none; }
+.pf-noterow { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+
+/* Schüler: Hinweis/Zoom-Box in der Lektion */
+.pf-note {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--amber-soft); border: 1px solid rgba(232, 163, 61, 0.35);
+  border-radius: var(--radius-sm); padding: 14px 16px; margin: 0 0 28px;
+}
+.pf-note svg { color: var(--amber); flex: none; margin-top: 2px; }
+.pf-note-body { font-size: 14.5px; color: var(--ink); white-space: pre-wrap; min-width: 0; }
+.pf-note-body strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--amber); margin-bottom: 4px; }
+.pf-note-body a { color: var(--amber); text-decoration: underline; word-break: break-all; }
+
+/* Banner-Editor (Teacher dashboard) */
+.pf-banner { margin-bottom: 16px; }
+.pf-banner .pf-redeem-toggle { display: inline-flex; align-items: center; gap: 7px; }
+.pf-banner-form { margin-top: 14px; max-width: 560px; }
+.pf-banner-form input {
+  width: 100%; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  color: var(--ink); font-family: var(--font-body); font-size: 15px; padding: 12px 15px; transition: border-color 0.2s ease;
+}
+.pf-banner-form input:focus { border-color: var(--amber); outline: none; }
+.pf-banner-btns { display: flex; gap: 10px; margin-top: 12px; }
+
+/* Format-Badge im Schüler-Dashboard */
+.pf-fmt {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--silver); border: 1px solid var(--line); background: var(--bg-1);
+  border-radius: 100px; padding: 6px 14px;
+}
+.pf-fmt-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+.pf-fmt-group .pf-fmt-dot { background: var(--silver); }
+.pf-fmt-mini .pf-fmt-dot { background: var(--rot); }
+.pf-fmt-individual { color: var(--amber); border-color: rgba(232,163,61,0.4); }
+.pf-fmt-individual .pf-fmt-dot { background: var(--amber); box-shadow: 0 0 0 3px var(--amber-soft); }
+
+/* Student: persönliche Aufgaben */
+.pf-mytasks { border: 1px solid rgba(232,163,61,0.4); border-radius: var(--radius); padding: 22px 24px; margin-bottom: 28px; background: var(--bg-1); }
+.pf-mytasks-empty { border-style: dashed; border-color: var(--line); }
+.pf-mytasks-empty .pf-mytasks-head { margin-bottom: 0; }
+.pf-mytasks-empty .pf-mytasks-head svg { color: var(--lead); }
+.pf-mytasks-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.pf-mytasks-head svg { color: var(--amber); flex: none; }
+.pf-mytasks-head strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 18px; }
+.pf-mytasks-head span { color: var(--muted); font-size: 13px; }
+.pf-mytask { border-top: 1px solid var(--line); padding: 14px 0; }
+.pf-mytask:first-of-type { border-top: none; }
+.pf-mytask p { font-size: 15px; color: var(--ink); white-space: pre-wrap; }
+.pf-mytask p a { color: var(--amber); word-break: break-all; }
+.pf-mytask-course { display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--amber); background: var(--amber-soft); border-radius: 100px; padding: 3px 10px; margin-bottom: 6px; }
+.pf-mytask-date { display: block; font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+/* Teacher: individuelle Aufgaben */
+.pf-assign-form { margin-bottom: 8px; }
+.pf-assign-form textarea {
+  width: 100%; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  color: var(--ink); font-family: var(--font-body); font-size: 15px; padding: 12px 14px; resize: vertical; transition: border-color 0.2s ease;
+}
+.pf-assign-form textarea:focus, .pf-assign-form select:focus { border-color: var(--amber); outline: none; }
+.pf-assign-form select {
+  width: 100%; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  color: var(--ink); font-family: var(--font-body); font-size: 15px; padding: 12px 14px; cursor: pointer;
+}
+.pf-assign-form .btn { margin-top: 4px; }
+.pf-assign-list { display: flex; flex-direction: column; gap: 12px; }
+.pf-assign-item { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; background: var(--bg-1); position: relative; }
+.pf-assign-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+.pf-assign-for { font-size: 13px; font-weight: 600; color: var(--ink); }
+.pf-assign-item p { font-size: 15px; color: var(--silver); white-space: pre-wrap; }
+.pf-assign-item p a { color: var(--amber); word-break: break-all; }
+.pf-assign-del {
+  margin-top: 12px; background: none; border: 1px solid var(--line); color: var(--muted);
+  font-family: var(--font-body); font-size: 13px; border-radius: 100px; padding: 6px 14px; cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.pf-assign-del:hover { color: #e0795a; border-color: var(--rot); }
+
+/* Teacher: Gruppen-Auswahl für Zugriff */
+.pf-groupbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 4px 0 12px; }
+.pf-groupbar label { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase; }
+.pf-groupbar select {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 100px; color: var(--ink);
+  font-family: var(--font-body); font-size: 14px; font-weight: 500; padding: 9px 16px; cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.pf-groupbar select:focus { border-color: var(--amber); outline: none; }
+
+/* Teacher: Schüler-Register (Gruppen/Mini/Einzel) */
+.pf-stud-section { margin-bottom: 12px; }
+.pf-group { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 12px; background: var(--bg-1); }
+.pf-group-head { font-family: var(--font-display); font-weight: 400; font-size: 15px; color: var(--ink); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.pf-group-count { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; font-family: var(--font-body); font-size: 11px; font-weight: 600; color: var(--on-amber); background: var(--amber); border-radius: 100px; }
+.pf-stud {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.pf-stud:last-child { border-bottom: none; }
+.pf-stud-name { font-size: 15px; font-weight: 500; flex: 1; min-width: 120px; }
+.pf-stud-actions { display: inline-flex; gap: 8px; }
+.pf-stud-task {
+  background: var(--amber-soft); border: 1px solid rgba(232,163,61,0.35); color: var(--amber);
+  font-family: var(--font-body); font-size: 12.5px; font-weight: 500; border-radius: 100px;
+  padding: 6px 13px; cursor: pointer; transition: background 0.2s ease;
+}
+.pf-stud-task:hover { background: rgba(232,163,61,0.22); }
+/* Einzel-Sektion: Studierende direkt (ohne Gruppen-Box) */
+.pf-stud-section > .pf-stud { padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); margin-bottom: 8px; background: var(--bg-1); }
+.pf-stud-section > .pf-empty { padding: 4px 2px 14px; }
+
+/* ---------- Fragen-Chat (Schüler:in ↔ Lehrkraft) ---------- */
+.pf-chat { display: flex; flex-direction: column; gap: 14px; }
+.pf-chat-log {
+  display: flex; flex-direction: column; gap: 10px;
+  max-height: 440px; overflow-y: auto; padding: 4px 2px;
+}
+.pf-chat-empty { color: var(--muted); font-size: 14.5px; text-align: center; padding: 28px 12px; }
+.pf-bubble {
+  max-width: 82%; padding: 10px 14px; border-radius: 16px;
+  border: 1px solid var(--line); background: var(--bg-2);
+}
+.pf-bubble.them { align-self: flex-start; border-bottom-left-radius: 5px; }
+.pf-bubble.me { align-self: flex-end; background: var(--amber-soft); border-color: rgba(232,163,61,0.4); border-bottom-right-radius: 5px; }
+.pf-bubble-who { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--amber); margin-bottom: 4px; }
+.pf-bubble-text { font-size: 15px; color: var(--ink); white-space: pre-wrap; line-height: 1.5; word-break: break-word; }
+.pf-bubble-text a { color: var(--amber); text-decoration: underline; word-break: break-all; }
+.pf-bubble-time { display: block; font-size: 11px; color: var(--muted); margin-top: 5px; text-align: right; }
+.pf-chat-form { display: flex; gap: 10px; align-items: flex-end; }
+.pf-chat-form textarea {
+  flex: 1; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  color: var(--ink); font-family: var(--font-body); font-size: 15px; padding: 12px 14px; resize: vertical;
+  transition: border-color 0.2s ease;
+}
+.pf-chat-form textarea:focus { border-color: var(--amber); outline: none; }
+.pf-chat-form .btn { flex: none; }
+
+/* Teacher: ein Verlauf je Schüler:in */
+.pf-chat-threads { display: flex; flex-direction: column; gap: 16px; }
+.pf-chat-thread { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; background: var(--bg-1); }
+.pf-chat-thread .pf-chat-log { max-height: 320px; margin-bottom: 12px; }
+.pf-chat-who { font-family: var(--font-display); font-weight: 400; font-size: 16px; color: var(--ink); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pf-chat-badge { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-amber); background: var(--amber); border-radius: 100px; padding: 3px 10px; }
+
+/* Teacher-Dashboard: Marker für offene Fragen am Lektionslink */
+.pf-qbadge { display: inline-flex; align-items: center; font-size: 12px; font-weight: 600; color: var(--on-amber); background: var(--amber); border-radius: 100px; padding: 3px 9px; margin-left: 8px; }
+
+/* ---------- NAV (platform header reuse + platform link on site) ---------- */
+.nav-platform { color: var(--amber) !important; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  #siteLink { display: none; }
+  .chip-role { display: none; }
+  #userChip { gap: 8px; }
+}
+
+@media (max-width: 720px) {
+  #app { padding: 92px 16px 72px; }
+  .pf-roles { grid-template-columns: 1fr; }
+  .pf-dashtop { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .pf-lvhead { grid-template-columns: 50px 1fr 18px; gap: 12px; }
+  .pf-lockhead { grid-template-columns: 50px 1fr auto; gap: 12px; }
+  .pf-lvtag, .pf-lvmeta, .pf-lockhint { display: none; }
+  .pf-lesson-teach { grid-template-columns: 30px 1fr auto; gap: 12px; }
+  .pf-lesson-teach .pf-toggle-text { display: none; }
+  .pf-dashbtns { width: 100%; }
+  .pf-dashbtns .btn { flex: 1; }
+  .hw-matchrow { grid-template-columns: 1fr; gap: 6px; }
+  .hw-matchrow { margin-bottom: 16px; }
+  .pf-chat-form { flex-direction: column; align-items: stretch; }
+  .pf-bubble { max-width: 92%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-ring .ring-fg { transition: none; }
+}
