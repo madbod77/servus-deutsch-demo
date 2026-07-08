@@ -89,6 +89,25 @@
     sio.observe(stepsEl);
   }
 
+  /* ---------- Why-cards: staggered reveal + icon line-draw ("Переваги") ---------- */
+  var bento = document.querySelector("#why .bento");
+  if (bento && !reducedMotion && "IntersectionObserver" in window) {
+    // normalize each icon shape to pathLength 1 so the line-draw works uniformly
+    bento.querySelectorAll(".card-icon svg > *").forEach(function (s) { s.setAttribute("pathLength", "1"); });
+    bento.classList.add("cards-anim");
+    var bio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          bento.classList.add("play");
+          bio.unobserve(bento);
+          // after the entrance completes, drop the classes so hover/base state is clean
+          setTimeout(function () { bento.classList.remove("cards-anim", "play"); }, 1800);
+        }
+      });
+    }, { threshold: 0.15 });
+    bio.observe(bento);
+  }
+
   /* ---------- Counters ---------- */
   var counters = document.querySelectorAll("[data-count]");
   function animateCounter(el) {
