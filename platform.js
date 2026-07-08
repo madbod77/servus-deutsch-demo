@@ -140,6 +140,12 @@
       "teacher.accessOnDash": "Die Freigabe der Lektionen steuerst du auf der Startseite pro Gruppe.",
       "access.group": "Gruppe verwalten",
       "access.allGroups": "Alle (Standard)",
+      "access.link": "Gruppen-Link kopieren",
+      "access.linkCopied": "Kopiert! Sende diesen Link an die Schüler:innen:",
+      "access.linkEmpty": "Für diese Gruppe gibt es noch keinen Kurs bzw. Zugang. Füge zuerst Schüler:innen hinzu oder gib Lektionen frei.",
+      "grant.title": "Du hast Zugang erhalten",
+      "grant.sub": "Gib deinen Namen ein, um deinen Kurs {course} zu öffnen.",
+      "grant.enter": "Kurs öffnen",
       "teacher.resetAccess": "Zugriff zurücksetzen",
       "teacher.resetAccessConfirm": "Zugriff zurücksetzen? Danach ist für Schüler:innen nur noch die erste Lektion jedes Niveaus freigegeben.",
       "teacher.resetAccessDone": "Zugriff zurückgesetzt — nur die erste Lektion ist freigegeben.",
@@ -299,6 +305,12 @@
       "teacher.accessOnDash": "Lesson release is managed per group on the home page.",
       "access.group": "Manage group",
       "access.allGroups": "All (default)",
+      "access.link": "Copy group link",
+      "access.linkCopied": "Copied! Send this link to your students:",
+      "access.linkEmpty": "This group has no course or access yet. Add students or release lessons first.",
+      "grant.title": "You've been granted access",
+      "grant.sub": "Enter your name to open your course {course}.",
+      "grant.enter": "Open course",
       "teacher.resetAccess": "Reset access",
       "teacher.resetAccessConfirm": "Reset access? Students will then only have the first lesson of each level released.",
       "teacher.resetAccessDone": "Access reset — only the first lesson is released.",
@@ -458,6 +470,12 @@
       "teacher.accessOnDash": "Відкриттям уроків керуєте на головній — окремо для кожної групи.",
       "access.group": "Керувати групою",
       "access.allGroups": "Усі (стандарт)",
+      "access.link": "Скопіювати лінк групи",
+      "access.linkCopied": "Скопійовано! Надішли це посилання своїм учням:",
+      "access.linkEmpty": "Для цієї групи ще немає курсу чи доступу. Спершу додай учнів або відкрий уроки.",
+      "grant.title": "Тобі відкрито доступ",
+      "grant.sub": "Введи своє ім'я, щоб відкрити курс {course}.",
+      "grant.enter": "Відкрити курс",
       "teacher.resetAccess": "Скинути доступ",
       "teacher.resetAccessConfirm": "Скинути доступ? Після цього студентам буде відкрито лише перший урок кожного рівня.",
       "teacher.resetAccessDone": "Доступ скинуто — відкрито лише перший урок.",
@@ -617,6 +635,12 @@
       "teacher.accessOnDash": "Открытием уроков управляете на главной — отдельно для каждой группы.",
       "access.group": "Управлять группой",
       "access.allGroups": "Все (стандарт)",
+      "access.link": "Скопировать ссылку группы",
+      "access.linkCopied": "Скопировано! Отправь эту ссылку своим ученикам:",
+      "access.linkEmpty": "Для этой группы ещё нет курса или доступа. Сначала добавь учеников или открой уроки.",
+      "grant.title": "Тебе открыт доступ",
+      "grant.sub": "Введи своё имя, чтобы открыть курс {course}.",
+      "grant.enter": "Открыть курс",
       "teacher.resetAccess": "Сбросить доступ",
       "teacher.resetAccessConfirm": "Сбросить доступ? После этого студентам будет открыт только первый урок каждого уровня.",
       "teacher.resetAccessDone": "Доступ сброшен — открыт только первый урок.",
@@ -951,6 +975,7 @@
   var flash = null; // einmalige Erfolgsmeldung nach Code-Einlösung
   var assignPrefill = null; // Name für das Aufgaben-Formular vorbelegen
   var teacherGroup = "__all"; // aktuell im Lehrer-Dashboard gewählte Gruppe
+  var GRANT = null; // aus einem persönlichen Zugangslink (?k=) dekodierter Zugang
   function go(hash) { if (location.hash === hash) render(); else location.hash = hash; }
 
   function render() {
@@ -961,7 +986,8 @@
     var hash = location.hash || "#/";
     var parts = hash.replace(/^#\//, "").split("/"); // e.g. ["lesson","a1-1"]
 
-    if (!role) { return viewLogin(); }
+    if (!role) { return GRANT ? viewGrant() : viewLogin(); }
+    if (role === "student" && GRANT) { return applyGrant(store.name()); }
     if (parts[0] === "lesson" && parts[1]) return viewLesson(parts[1]);
     if (parts[0] === "teach" && parts[1]) return viewTeachLesson(parts[1]);
     if (parts[0] === "class") return viewClass();
@@ -974,7 +1000,7 @@
   function viewLogin() {
     app.innerHTML =
       '<section class="pf-login">' +
-        '<span class="pf-loginlogo"><img src="logo.png?v=33" alt="Wienerlingo" width="84" height="84"></span>' +
+        '<span class="pf-loginlogo"><img src="logo.png?v=34" alt="Wienerlingo" width="84" height="84"></span>' +
         '<h1 class="pf-h1">' + esc(t("login.title")) + '</h1>' +
         '<p class="pf-sub">' + esc(t("login.sub")) + '</p>' +
         '<form class="pf-codeform" id="codeForm" novalidate>' +
@@ -1008,6 +1034,35 @@
     });
     nameInput.addEventListener("input", function () { nameInput.classList.remove("bad"); err.textContent = ""; });
     codeInput.addEventListener("input", function () { codeInput.classList.remove("bad"); err.textContent = ""; });
+  }
+
+  /* ---------------- View: Zugang per persönlichem Link (nur Name nötig) ---------------- */
+  function viewGrant() {
+    var course = (GRANT.lv || []).join(", ") || (GRANT.g || "");
+    app.innerHTML =
+      '<section class="pf-login">' +
+        '<span class="pf-loginlogo"><img src="logo.png?v=34" alt="Wienerlingo" width="84" height="84"></span>' +
+        '<h1 class="pf-h1">' + esc(t("grant.title")) + '</h1>' +
+        '<p class="pf-sub">' + esc(t("grant.sub", { course: course })) + '</p>' +
+        '<form class="pf-codeform" id="grantForm" novalidate>' +
+          '<div class="pf-field">' +
+            '<label for="gName">' + esc(t("login.nameLabel")) + '</label>' +
+            '<input type="text" id="gName" placeholder="' + esc(t("login.namePh")) + '" value="' + esc(store.name()) + '" autocomplete="given-name">' +
+          '</div>' +
+          '<button type="submit" class="btn btn-primary btn-block">' + esc(t("grant.enter")) + '</button>' +
+          '<p class="pf-codeerr" id="gErr" role="alert"></p>' +
+        '</form>' +
+      '</section>';
+    var form = document.getElementById("grantForm");
+    var nm = document.getElementById("gName");
+    var err = document.getElementById("gErr");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = nm.value.trim();
+      if (!v) { err.textContent = t("login.errName"); nm.classList.add("bad"); nm.focus(); return; }
+      applyGrant(v);
+    });
+    nm.addEventListener("input", function () { nm.classList.remove("bad"); err.textContent = ""; });
   }
 
   /* ---------------- View: Student dashboard ---------------- */
@@ -1420,6 +1475,32 @@
     return opts;
   }
 
+  /* ---- Persönliche Zugangslinks (ohne Backend): Gruppen-Zugang in einen teilbaren Link kodieren ---- */
+  function b64urlEnc(s){ return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""); }
+  function b64urlDec(s){ s=String(s).replace(/-/g,"+").replace(/_/g,"/"); return decodeURIComponent(escape(atob(s))); }
+  function encodeGrant(g){ try { return b64urlEnc(JSON.stringify(g)); } catch (e) { return ""; } }
+  function decodeGrant(tok){ try { var g=JSON.parse(b64urlDec(tok)); if (g && g.v===1 && (g.lv || g.acc)) return g; } catch (e) {} return null; }
+  function levelOfLesson(id){ var out=null; (window.COURSE.levels||[]).forEach(function(lv){ (lv.lessons||[]).forEach(function(ls){ if (ls.id===id) out=lv.code; }); }); return out; }
+  function buildGroupGrant(groupKey){
+    var acc = store.lessonAccess(groupKey), levels = {}, roster = store.roster(), mem = null;
+    roster.forEach(function(s){ if (groupKeyOf(s)===groupKey){ if (!mem) mem=s; if (s.course) levels[s.course]=true; } });
+    Object.keys(acc).forEach(function(id){ var lc=levelOfLesson(id); if (lc) levels[lc]=true; });
+    var fmt = groupKey==="__all" ? "group" : (mem ? mem.format : "group");
+    var label = groupKey==="__all" ? "" : (mem ? (mem.format==="individual" ? mem.name : (mem.group||"")) : "");
+    return { v:1, fmt:fmt, lv:Object.keys(levels), acc:acc, g:label };
+  }
+  function applyGrant(name){
+    if (!GRANT) return;
+    if (name) store.setName(name);
+    store.setRole("student");
+    if (GRANT.fmt) store.setFormat(GRANT.fmt);
+    (GRANT.lv||[]).forEach(function(lv){ store.unlock(lv); });
+    var acc = GRANT.acc||{};
+    Object.keys(acc).forEach(function(id){ store.setLessonAccess("__all", id, acc[id]); });
+    GRANT = null;
+    go("#/");
+  }
+
   function viewTeacherDash() {
     var prog = store.progress();
     var nm = store.name();
@@ -1452,7 +1533,9 @@
         '<div class="pf-groupbar">' +
           '<label for="groupSelect">' + esc(t("access.group")) + '</label>' +
           '<select id="groupSelect">' + groupOptions(roster) + '</select>' +
+          '<button type="button" class="btn btn-ghost" id="groupLinkBtn">' + esc(t("access.link")) + '</button>' +
         '</div>' +
+        '<p class="pf-accesshint pf-grouplink" id="groupLinkOut" hidden></p>' +
         '<p class="pf-accesshint">' + esc(t("teacher.accessHint")) + '</p>' +
         '<p class="pf-flash" id="teachFlash"></p>';
     window.COURSE.levels.forEach(function (lv) { html += levelBlock(lv, prog, true); });
@@ -1464,6 +1547,17 @@
 
     var gsel = document.getElementById("groupSelect");
     if (gsel) { gsel.value = teacherGroup; gsel.addEventListener("change", function () { teacherGroup = gsel.value; render(); }); }
+
+    var glb = document.getElementById("groupLinkBtn");
+    if (glb) glb.addEventListener("click", function () {
+      var out = document.getElementById("groupLinkOut");
+      var g = buildGroupGrant(teacherGroup);
+      if (!g.lv.length) { out.hidden = false; out.className = "pf-accesshint pf-grouplink err"; out.textContent = t("access.linkEmpty"); return; }
+      var link = location.origin + location.pathname + "?k=" + encodeGrant(g);
+      out.hidden = false; out.className = "pf-accesshint pf-grouplink ok";
+      out.textContent = t("access.linkCopied") + " " + link;
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(link).catch(function () {}); }
+    });
 
     app.querySelectorAll(".pf-access").forEach(function (cb) {
       cb.addEventListener("change", function () { store.setLessonAccess(teacherGroup, cb.getAttribute("data-id"), cb.checked); });
@@ -1843,7 +1937,17 @@
   };
 
   /* ---------------- Boot ---------------- */
+  function boot() {
+    try {
+      var tok = new URLSearchParams(location.search).get("k");
+      if (tok) {
+        var g = decodeGrant(tok);
+        if (g) { GRANT = g; try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {} }
+      }
+    } catch (e) {}
+    render();
+  }
   window.addEventListener("hashchange", render);
   document.addEventListener("dw:lang", render);
-  document.addEventListener("DOMContentLoaded", render);
+  document.addEventListener("DOMContentLoaded", boot);
 })();

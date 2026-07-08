@@ -474,6 +474,9 @@
   transition: border-color 0.2s ease;
 }
 .pf-groupbar select:focus { border-color: var(--amber); outline: none; }
+.pf-grouplink { word-break: break-all; user-select: all; max-width: 100%; }
+.pf-grouplink.ok { color: var(--ink); }
+.pf-grouplink.err { color: #b23b3b; }
 
 /* Teacher: Schüler-Register (Gruppen/Mini/Einzel) */
 .pf-stud-section { margin-bottom: 12px; }
