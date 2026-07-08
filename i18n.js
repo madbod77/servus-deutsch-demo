@@ -1,11 +1,11 @@
-// Servus Deutsch — i18n (de / en / uk)
+// Wienerlingo — i18n (de / en / uk)
 window.DW = (function () {
   "use strict";
 
   var DICTS = {
     /* ================= DEUTSCH (rechtsverbindliche Basis) ================= */
     de: {
-      "meta.title": "Servus Deutsch Wien — Deutschkurse A1–C1 | ÖSD-, ÖIF- & Goethe-Vorbereitung",
+      "meta.title": "Wienerlingo Wien — Deutschkurse A1–C1 | ÖSD-, ÖIF- & Goethe-Vorbereitung",
       "meta.desc": "Online-Deutschkurse für Erwachsene in Österreich: Niveaus A1–C1, Vorbereitung auf ÖSD, ÖIF und Goethe-Zertifikat, kleine Gruppen bis 6 Personen. Erste Stunde gratis.",
       "nav.levels": "Niveaus", "nav.why": "Warum wir", "nav.teachers": "Lehrkräfte", "nav.pricing": "Preise",
       "nav.platform": "Plattform",
@@ -98,7 +98,7 @@ window.DW = (function () {
       "cta.msgName": "Name", "cta.msgContact": "Kontakt", "cta.msgLevel": "Niveau",
       "foot.brand": "Online-Sprachschule für Deutsch.<br>Mustergasse 12/4, 1010 Wien, Österreich.",
       "foot.imprint": "Impressum", "foot.privacy": "Datenschutz", "foot.terms": "AGB",
-      "foot.copy": "© 2026 Servus Deutsch e.U. · Alle Rechte vorbehalten.",
+      "foot.copy": "© 2026 Wienerlingo e.U. · Alle Rechte vorbehalten.",
       "legal.back": "← Zurück zur Startseite",
       "_rotator": ["deine Karriere", "den Job in Wien", "das Studium", "die ÖSD-Prüfung", "dich selbst"],
       "_marqueeTitle": "Österreichisch ↔ Hochdeutsch",
@@ -107,7 +107,7 @@ window.DW = (function () {
 
     /* ================= ENGLISH ================= */
     en: {
-      "meta.title": "Servus Deutsch Vienna — German Courses A1–C1 | ÖSD, ÖIF & Goethe Preparation",
+      "meta.title": "Wienerlingo Vienna — German Courses A1–C1 | ÖSD, ÖIF & Goethe Preparation",
       "meta.desc": "Online German courses for adults in Austria: levels A1–C1, preparation for ÖSD, ÖIF and Goethe-Zertifikat, small groups of up to 6 people. First lesson free.",
       "nav.levels": "Levels", "nav.why": "Why us", "nav.teachers": "Teachers", "nav.pricing": "Pricing",
       "nav.platform": "Platform",
@@ -200,7 +200,7 @@ window.DW = (function () {
       "cta.msgName": "Name", "cta.msgContact": "Contact", "cta.msgLevel": "Level",
       "foot.brand": "Online German language school.<br>Mustergasse 12/4, 1010 Vienna, Austria.",
       "foot.imprint": "Legal notice", "foot.privacy": "Privacy policy", "foot.terms": "Terms (AGB)",
-      "foot.copy": "© 2026 Servus Deutsch e.U. · All rights reserved.",
+      "foot.copy": "© 2026 Wienerlingo e.U. · All rights reserved.",
       "legal.back": "← Back to home page",
       "_rotator": ["your career", "a job in Vienna", "university", "the ÖSD exam", "yourself"],
       "_marqueeTitle": "German ↔ English",
@@ -209,7 +209,7 @@ window.DW = (function () {
 
     /* ================= УКРАЇНСЬКА ================= */
     uk: {
-      "meta.title": "Servus Deutsch Відень — курси німецької A1–C1 | підготовка до ÖSD, ÖIF та Goethe",
+      "meta.title": "Wienerlingo Відень — курси німецької A1–C1 | підготовка до ÖSD, ÖIF та Goethe",
       "meta.desc": "Онлайн-курси німецької мови для дорослих в Австрії: рівні A1–C1, підготовка до ÖSD, ÖIF і Goethe-Zertifikat, малі групи до 6 людей. Перший урок безкоштовно.",
       "nav.levels": "Рівні", "nav.why": "Чому ми", "nav.teachers": "Викладачі", "nav.pricing": "Ціни",
       "nav.platform": "Платформа",
@@ -302,7 +302,7 @@ window.DW = (function () {
       "cta.msgName": "Ім'я", "cta.msgContact": "Контакт", "cta.msgLevel": "Рівень",
       "foot.brand": "Онлайн-школа німецької мови.<br>Mustergasse 12/4, 1010 Відень, Австрія.",
       "foot.imprint": "Impressum", "foot.privacy": "Конфіденційність", "foot.terms": "Умови (AGB)",
-      "foot.copy": "© 2026 Servus Deutsch e.U. · Усі права захищено.",
+      "foot.copy": "© 2026 Wienerlingo e.U. · Усі права захищено.",
       "legal.back": "← Назад на головну",
       "_rotator": ["кар'єри", "роботи у Відні", "навчання", "іспиту ÖSD", "себе"],
       "_marqueeTitle": "Німецька ↔ українська",
@@ -311,7 +311,7 @@ window.DW = (function () {
 
     /* ================= РУССКИЙ ================= */
     ru: {
-      "meta.title": "Servus Deutsch Вена — курсы немецкого A1–C1 | подготовка к ÖSD, ÖIF и Goethe",
+      "meta.title": "Wienerlingo Вена — курсы немецкого A1–C1 | подготовка к ÖSD, ÖIF и Goethe",
       "meta.desc": "Онлайн-курсы немецкого языка для взрослых в Австрии: уровни A1–C1, подготовка к ÖSD, ÖIF и Goethe-Zertifikat, малые группы до 6 человек. Первый урок бесплатно.",
       "nav.levels": "Уровни", "nav.why": "Почему мы", "nav.teachers": "Преподаватели", "nav.pricing": "Цены",
       "nav.platform": "Платформа",
@@ -404,7 +404,7 @@ window.DW = (function () {
       "cta.msgName": "Имя", "cta.msgContact": "Контакт", "cta.msgLevel": "Уровень",
       "foot.brand": "Онлайн-школа немецкого языка.<br>Mustergasse 12/4, 1010 Вена, Австрия.",
       "foot.imprint": "Impressum", "foot.privacy": "Конфиденциальность", "foot.terms": "Условия (AGB)",
-      "foot.copy": "© 2026 Servus Deutsch e.U. · Все права защищены.",
+      "foot.copy": "© 2026 Wienerlingo e.U. · Все права защищены.",
       "legal.back": "← Назад на главную",
       "_rotator": ["карьеры", "работы в Вене", "учёбы", "экзамена ÖSD", "себя"],
       "_marqueeTitle": "Немецкий ↔ русский",

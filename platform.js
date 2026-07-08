@@ -1,5 +1,5 @@
 /* ============================================================
-   Servus Deutsch — Lernplattform (Demo, statisch, localStorage)
+   Wienerlingo — Lernplattform (Demo, statisch, localStorage)
    Rollen: Schüler:in / Lehrkraft · 3 Sprachen über window.DW
    ============================================================ */
 (function () {
@@ -10,7 +10,7 @@
     de: {
       "login.badge": "Demo-Zugang",
       "login.title": "Willkommen auf der Lernplattform",
-      "login.sub": "Gib deinen Zugangscode ein, um die Plattform von Servus Deutsch zu öffnen. Dein Fortschritt bleibt lokal in diesem Browser.",
+      "login.sub": "Gib deinen Zugangscode ein, um die Plattform von Wienerlingo zu öffnen. Dein Fortschritt bleibt lokal in diesem Browser.",
       "login.nameLabel": "Dein Name",
       "login.namePh": "z. B. Anna",
       "login.errName": "Bitte gib deinen Namen ein.",
@@ -169,7 +169,7 @@
     en: {
       "login.badge": "Demo access",
       "login.title": "Welcome to the learning platform",
-      "login.sub": "Enter your access code to open the Servus Deutsch platform. Your progress stays local in this browser.",
+      "login.sub": "Enter your access code to open the Wienerlingo platform. Your progress stays local in this browser.",
       "login.nameLabel": "Your name",
       "login.namePh": "e.g. Anna",
       "login.errName": "Please enter your name.",
@@ -328,7 +328,7 @@
     uk: {
       "login.badge": "Демо-доступ",
       "login.title": "Вітаємо на навчальній платформі",
-      "login.sub": "Введіть код доступу, щоб відкрити платформу Servus Deutsch. Ваш прогрес зберігається локально в цьому браузері.",
+      "login.sub": "Введіть код доступу, щоб відкрити платформу Wienerlingo. Ваш прогрес зберігається локально в цьому браузері.",
       "login.nameLabel": "Ваше імʼя",
       "login.namePh": "напр. Тетяна",
       "login.errName": "Будь ласка, введіть ваше імʼя.",
@@ -487,7 +487,7 @@
     ru: {
       "login.badge": "Демо-доступ",
       "login.title": "Добро пожаловать на учебную платформу",
-      "login.sub": "Введите код доступа, чтобы открыть платформу Servus Deutsch. Ваш прогресс сохраняется локально в этом браузере.",
+      "login.sub": "Введите код доступа, чтобы открыть платформу Wienerlingo. Ваш прогресс сохраняется локально в этом браузере.",
       "login.nameLabel": "Ваше имя",
       "login.namePh": "напр. Татьяна",
       "login.errName": "Пожалуйста, введите ваше имя.",
@@ -974,7 +974,7 @@
   function viewLogin() {
     app.innerHTML =
       '<section class="pf-login">' +
-        '<span class="pf-loginlogo"><img src="logo.png?v=22" alt="Servus Deutsch" width="84" height="84"></span>' +
+        '<span class="pf-loginlogo"><img src="logo.png?v=31" alt="Wienerlingo" width="84" height="84"></span>' +
         '<h1 class="pf-h1">' + esc(t("login.title")) + '</h1>' +
         '<p class="pf-sub">' + esc(t("login.sub")) + '</p>' +
         '<form class="pf-codeform" id="codeForm" novalidate>' +

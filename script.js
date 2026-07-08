@@ -1,4 +1,4 @@
-// Servus Deutsch — interactions
+// Wienerlingo — interactions
 (function () {
   "use strict";
 
@@ -130,7 +130,7 @@
   /* ---------- Form → Telegram ---------- */
   var form = document.getElementById("ctaForm");
   var status = document.getElementById("formStatus");
-  var TG_LINK = "https://t.me/servusdeutsch";
+  var TG_LINK = "https://t.me/wienerlingo";
 
   if (form) {
     form.addEventListener("submit", function (e) {

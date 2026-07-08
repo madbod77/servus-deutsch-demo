@@ -1,5 +1,5 @@
 /* ============================================================
-   Servus Deutsch — Lernplattform · Kursstruktur
+   Wienerlingo — Lernplattform · Kursstruktur
    Jedes Niveau ist in zwei Kursstufen geteilt: A1.1 / A1.2 …
    Jede Kursstufe hat 8 Lektionen, einen eigenen Code, eigene
    Freigaben. Lektionsinhalte folgen anhand der Literaturliste;
