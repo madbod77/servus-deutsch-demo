@@ -1000,7 +1000,7 @@
   function viewLogin() {
     app.innerHTML =
       '<section class="pf-login">' +
-        '<span class="pf-loginlogo"><img src="logo.png?v=35" alt="Wienerlingo" width="84" height="84"></span>' +
+        '<span class="pf-loginlogo"><img src="logo.png?v=36" alt="Wienerlingo" width="84" height="84"></span>' +
         '<h1 class="pf-h1">' + esc(t("login.title")) + '</h1>' +
         '<p class="pf-sub">' + esc(t("login.sub")) + '</p>' +
         '<form class="pf-codeform" id="codeForm" novalidate>' +
@@ -1041,7 +1041,7 @@
     var course = (GRANT.lv || []).join(", ") || (GRANT.g || "");
     app.innerHTML =
       '<section class="pf-login">' +
-        '<span class="pf-loginlogo"><img src="logo.png?v=35" alt="Wienerlingo" width="84" height="84"></span>' +
+        '<span class="pf-loginlogo"><img src="logo.png?v=36" alt="Wienerlingo" width="84" height="84"></span>' +
         '<h1 class="pf-h1">' + esc(t("grant.title")) + '</h1>' +
         '<p class="pf-sub">' + esc(t("grant.sub", { course: course })) + '</p>' +
         '<form class="pf-codeform" id="grantForm" novalidate>' +
