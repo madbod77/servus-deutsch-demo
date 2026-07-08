@@ -123,7 +123,7 @@
      Eingabe ist tolerant (Bindestriche/Leerzeichen/Groß-/Klein egal).
      ============================================================ */
   window.ACCESS = {
-    teacher: "SD-TEACH-Q7K2M9",
+    teacher: "WD-TEACH-Q7K2M9",
     /* Drei Lernformate (wie auf der Preisseite) */
     formats: {
       group:      { label: { de: "Gruppe", en: "Group", uk: "Група", ru: "Группа" } },
@@ -134,25 +134,25 @@
        der zu seinem bezahlten Format + Niveau passt. */
     codes: {
       group: {
-        "A1.1": "SD-A11-H7M3K9", "A1.2": "SD-A12-T4Q8C5",
-        "A2.1": "SD-A21-R2W6N7", "A2.2": "SD-A22-N9X4P3",
-        "B1.1": "SD-B11-L6P1H8", "B1.2": "SD-B12-M3J7C2",
-        "B2.1": "SD-B21-K9F5R4", "B2.2": "SD-B22-P2D8W6",
-        "C1.1": "SD-C11-X7B3M1", "C1.2": "SD-C12-Q4H9T5"
+        "A1.1": "WD-A11-H7M3K9", "A1.2": "WD-A12-T4Q8C5",
+        "A2.1": "WD-A21-R2W6N7", "A2.2": "WD-A22-N9X4P3",
+        "B1.1": "WD-B11-L6P1H8", "B1.2": "WD-B12-M3J7C2",
+        "B2.1": "WD-B21-K9F5R4", "B2.2": "WD-B22-P2D8W6",
+        "C1.1": "WD-C11-X7B3M1", "C1.2": "WD-C12-Q4H9T5"
       },
       mini: {
-        "A1.1": "SD-M-A11-2T7K", "A1.2": "SD-M-A12-9C4Q",
-        "A2.1": "SD-M-A21-5W2N", "A2.2": "SD-M-A22-8X6R",
-        "B1.1": "SD-M-B11-3P8L", "B1.2": "SD-M-B12-6J4M",
-        "B2.1": "SD-M-B21-9F5K", "B2.2": "SD-M-B22-2D6P",
-        "C1.1": "SD-M-C11-7B1X", "C1.2": "SD-M-C12-4T9H"
+        "A1.1": "WD-M-A11-2T7K", "A1.2": "WD-M-A12-9C4Q",
+        "A2.1": "WD-M-A21-5W2N", "A2.2": "WD-M-A22-8X6R",
+        "B1.1": "WD-M-B11-3P8L", "B1.2": "WD-M-B12-6J4M",
+        "B2.1": "WD-M-B21-9F5K", "B2.2": "WD-M-B22-2D6P",
+        "C1.1": "WD-M-C11-7B1X", "C1.2": "WD-M-C12-4T9H"
       },
       individual: {
-        "A1.1": "SD-E-A11-8K3H", "A1.2": "SD-E-A12-5Q4C",
-        "A2.1": "SD-E-A21-2N9W", "A2.2": "SD-E-A22-6X5R",
-        "B1.1": "SD-E-B11-9L2P", "B1.2": "SD-E-B12-4M8J",
-        "B2.1": "SD-E-B21-5F9K", "B2.2": "SD-E-B22-6P2D",
-        "C1.1": "SD-E-C11-1X7B", "C1.2": "SD-E-C12-9H4T"
+        "A1.1": "WD-E-A11-8K3H", "A1.2": "WD-E-A12-5Q4C",
+        "A2.1": "WD-E-A21-2N9W", "A2.2": "WD-E-A22-6X5R",
+        "B1.1": "WD-E-B11-9L2P", "B1.2": "WD-E-B12-4M8J",
+        "B2.1": "WD-E-B21-5F9K", "B2.2": "WD-E-B22-6P2D",
+        "C1.1": "WD-E-C11-1X7B", "C1.2": "WD-E-C12-9H4T"
       }
     }
   };

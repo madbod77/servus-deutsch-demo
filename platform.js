@@ -16,7 +16,7 @@
       "login.errName": "Bitte gib deinen Namen ein.",
       "login.enter": "Plattform öffnen",
       "login.codeLabel": "Zugangscode",
-      "login.codePh": "z. B. SD-A1-XXXXXX",
+      "login.codePh": "z. B. WD-A1-XXXXXX",
       "login.codeHint": "Den Code für dein Niveau bekommst du nach der Bezahlung von deiner Lehrkraft. Lehrkräfte geben ihren Lehrer-Code ein.",
       "login.invalid": "Code ungültig. Bitte überprüfe die Eingabe.",
       "dash.redeem": "Weiteren Code einlösen",
@@ -175,7 +175,7 @@
       "login.errName": "Please enter your name.",
       "login.enter": "Open the platform",
       "login.codeLabel": "Access code",
-      "login.codePh": "e.g. SD-A1-XXXXXX",
+      "login.codePh": "e.g. WD-A1-XXXXXX",
       "login.codeHint": "You receive the code for your level from your teacher after payment. Teachers enter their teacher code.",
       "login.invalid": "Invalid code. Please check your input.",
       "dash.redeem": "Redeem another code",
@@ -334,7 +334,7 @@
       "login.errName": "Будь ласка, введіть ваше імʼя.",
       "login.enter": "Відкрити платформу",
       "login.codeLabel": "Код доступу",
-      "login.codePh": "напр. SD-A1-XXXXXX",
+      "login.codePh": "напр. WD-A1-XXXXXX",
       "login.codeHint": "Код для свого рівня ви отримуєте від викладача після оплати. Викладачі вводять свій код викладача.",
       "login.invalid": "Невірний код. Перевірте введене.",
       "dash.redeem": "Активувати ще код",
@@ -493,7 +493,7 @@
       "login.errName": "Пожалуйста, введите ваше имя.",
       "login.enter": "Открыть платформу",
       "login.codeLabel": "Код доступа",
-      "login.codePh": "напр. SD-A1-XXXXXX",
+      "login.codePh": "напр. WD-A1-XXXXXX",
       "login.codeHint": "Код для своего уровня вы получаете от преподавателя после оплаты. Преподаватели вводят свой код преподавателя.",
       "login.invalid": "Неверный код. Проверьте введённое.",
       "dash.redeem": "Активировать ещё код",
@@ -974,7 +974,7 @@
   function viewLogin() {
     app.innerHTML =
       '<section class="pf-login">' +
-        '<span class="pf-loginlogo"><img src="logo.png?v=32" alt="Wienerlingo" width="84" height="84"></span>' +
+        '<span class="pf-loginlogo"><img src="logo.png?v=33" alt="Wienerlingo" width="84" height="84"></span>' +
         '<h1 class="pf-h1">' + esc(t("login.title")) + '</h1>' +
         '<p class="pf-sub">' + esc(t("login.sub")) + '</p>' +
         '<form class="pf-codeform" id="codeForm" novalidate>' +
