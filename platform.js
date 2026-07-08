@@ -974,7 +974,7 @@
   function viewLogin() {
     app.innerHTML =
       '<section class="pf-login">' +
-        '<span class="pf-loginlogo"><img src="logo.png?v=31" alt="Wienerlingo" width="84" height="84"></span>' +
+        '<span class="pf-loginlogo"><img src="logo.png?v=32" alt="Wienerlingo" width="84" height="84"></span>' +
         '<h1 class="pf-h1">' + esc(t("login.title")) + '</h1>' +
         '<p class="pf-sub">' + esc(t("login.sub")) + '</p>' +
         '<form class="pf-codeform" id="codeForm" novalidate>' +
