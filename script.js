@@ -77,6 +77,18 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  /* ---------- Steps: staggered reveal ("Кроки") ---------- */
+  var stepsEl = document.querySelector(".steps");
+  if (stepsEl && !reducedMotion && "IntersectionObserver" in window) {
+    stepsEl.classList.add("anim");
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { stepsEl.classList.add("play"); sio.unobserve(stepsEl); }
+      });
+    }, { threshold: 0.28 });
+    sio.observe(stepsEl);
+  }
+
   /* ---------- Counters ---------- */
   var counters = document.querySelectorAll("[data-count]");
   function animateCounter(el) {
@@ -170,14 +182,41 @@
         + t("cta.msgContact") + ": " + contact.value.trim() + "\n"
         + t("cta.msgLevel") + ": " + level.value;
 
-      status.textContent = t("cta.ok").replace("{name}", name.value.trim());
-      status.classList.add("ok");
+      var okMsg = t("cta.ok").replace("{name}", name.value.trim());
 
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(msg).catch(function () {});
       }
       window.open(TG_LINK, "_blank", "noopener");
       form.reset();
+
+      var succ = document.getElementById("ctaSuccess");
+      var succMsg = document.getElementById("ctaSuccessMsg");
+      if (succ && succMsg) {
+        status.textContent = "";
+        status.className = "form-status";
+        succMsg.textContent = okMsg;
+        form.hidden = true;
+        succ.hidden = false;
+        succ.classList.remove("show");
+        void succ.offsetWidth;               // restart the checkmark animation
+        succ.classList.add("show");
+      } else {
+        status.textContent = okMsg;
+        status.classList.add("ok");
+      }
     });
+
+    /* "Weitere Anfrage senden" — back to the form ("Галочка" → форма) */
+    var again = document.getElementById("ctaAgain");
+    if (again) {
+      again.addEventListener("click", function () {
+        var succ = document.getElementById("ctaSuccess");
+        if (succ) { succ.classList.remove("show"); succ.hidden = true; }
+        form.hidden = false;
+        var fn = document.getElementById("fName");
+        if (fn) fn.focus();
+      });
+    }
   }
 })();
